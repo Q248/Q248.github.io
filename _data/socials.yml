@@ -1,9 +1,9 @@
 # Social links shown on the About page, in this order.
 # Docs: https://github.com/george-gca/jekyll-socials
-email: yin@carnegiescience.edu
+email: yin[at]carnegiescience.edu
 orcid_id: 0000-0001-5628-5015
 scholar_userid: MH_uq3oAAAAJ
 # linkedin_username:
 # x_username:
 github_username: Q248
-rss_icon: true
+#  rss_icon: true

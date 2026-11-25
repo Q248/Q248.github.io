@@ -19,3 +19,12 @@ Outside the lab, I enjoy running, hiking and traveling.
     <figcaption>Autumn colors</figcaption>
   </figure>
 </div>
+
+{% if site.categories.life %}
+<h2>Updates</h2>
+<ul>
+{% for post in site.categories.life %}
+  <li>{{ post.date | date: '%b %d, %Y' }} · <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}

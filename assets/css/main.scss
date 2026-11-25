@@ -591,3 +591,26 @@ footer.sticky-bottom {
 .post article h2 {
   clear: both;
 }
+
+
+/* About pages: News and Selected Publications in scroll boxes */
+.post:has(.profile) .news .table-responsive {
+  max-height: 21rem;          /* about 5 news items */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.post:has(.profile) .publications {
+  max-height: 34rem;          /* about 3 papers */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+/* always show a thin scroll bar, so visitors know there is more */
+.post:has(.profile) .news .table-responsive::-webkit-scrollbar,
+.post:has(.profile) .publications::-webkit-scrollbar {
+  width: 6px;
+}
+.post:has(.profile) .news .table-responsive::-webkit-scrollbar-thumb,
+.post:has(.profile) .publications::-webkit-scrollbar-thumb {
+  background: rgba(120, 90, 70, 0.35);
+  border-radius: 3px;
+}

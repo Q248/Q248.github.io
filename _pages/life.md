@@ -12,11 +12,15 @@ Outside the lab, I enjoy running, hiking and traveling.
 <div class="qy-gallery">
   <figure>
     <img src="{{ '/assets/img/life_mountain.jpg' | relative_url }}" alt="Hiking in the mountains" loading="lazy">
-    <figcaption>Mount Rainier</figcaption>
+    <figcaption>Mount Rainier - Sep 2023</figcaption>
   </figure>
   <figure>
     <img src="{{ '/assets/img/autumn_road.jpg' | relative_url }}" alt="A forest road in autumn" loading="lazy">
-    <figcaption>Acadia National Park</figcaption>
+    <figcaption>Acadia National Park - Oct 2026</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/img/Yellowstone.jpg' | relative_url }}" alt="A forest road in autumn" loading="lazy">
+    <figcaption>Yellowstone National Park - Jun 2022</figcaption>
   </figure>
 </div>
 

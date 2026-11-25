@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  Research Associate, Howard Hughes Medical Institute · <a href='https://carnegiescience.edu/' target='_blank'>Carnegie Institution for Science</a> · <a href='/zh/'>中文</a>
+  Research Associate, Howard Hughes Medical Institute · <a href='https://carnegiescience.edu/' target='_blank'>Carnegie Institution for Science</a>
 
 profile:
   align: right

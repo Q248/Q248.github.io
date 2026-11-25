@@ -7,7 +7,7 @@ first_name: Qi
 middle_name:
 last_name: Yin
 contact_note: >
-  Email is the best way to reach me.
+  Email: <a href="mailto:yin@carnegiescience.edu">yin@carnegiescience.edu</a> (work) · <a href="mailto:atianci235@gmail.com">atianci235@gmail.com</a> (personal)
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Qi Yin, Ph.D. Developmental biologist studying oocyte development, follicle dynamics and female fertility.
 footer_text: >

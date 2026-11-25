@@ -2,11 +2,11 @@
 layout: about
 title: 中文
 permalink: /zh/
-nav: false
-nav_order: 6
+nav: true
+nav_order: 7
 description: 尹奇 · 发育生物学 · 卵母细胞发育 · 卵泡动态
 subtitle: >
-  <strong>尹奇 博士</strong> · 霍华德·休斯医学研究所（HHMI）研究员 · 卡内基科学研究所 · <a href='/'>English</a>
+  <strong>尹奇 博士</strong> · 霍华德·休斯医学研究所（HHMI）研究员 · 卡内基科学研究所
 
 profile:
   align: right

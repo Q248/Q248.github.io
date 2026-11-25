@@ -12,7 +12,7 @@ cv:
       username: Q248
 
   sections:
-    Appointments:
+    Experience:
       - company: Howard Hughes Medical Institute · Carnegie Institution for Science
         position: Research Associate, Spradling Lab
         location: Baltimore, MD, USA
@@ -50,15 +50,30 @@ cv:
         location: Hefei, China
         end_date: 2011
 
-    Techniques:
-      - name: Genetic engineering
-        keywords: "CRISPR/Cas9 genome editing, mouse model generation, haploid embryonic stem cells"
-      - name: Cell & embryo biology
-        keywords: "Stem cell culture, oocyte and follicle culture"
+    Skills:
+      - name: Genome engineering
+        keywords:
+          - CRISPR/Cas9 knockout and knock-in
+          - CRISPR base-editing screens
+          - guide RNA library screening in haploid ES cells
+      - name: Mouse models & stem cells
+        keywords:
+          - generation and analysis of genetically modified mice
+          - derivation and culture of haploid embryonic stem cells
+      - name: Oocyte & follicle biology
+        keywords:
+          - oocyte and ovarian follicle culture
+          - analysis of follicle waves in the mouse ovary
       - name: Imaging
-        keywords: "Whole-mount imaging, 3D reconstruction (Imaris)"
+        keywords:
+          - whole-mount immunostaining of ovaries and follicles
+          - confocal imaging
+          - 3D reconstruction and quantification (Imaris)
       - name: Single-cell genomics
-        keywords: "scRNA-seq analysis (Seurat, Monocle3, CellChat)"
+        keywords:
+          - scRNA-seq analysis (Seurat)
+          - trajectory inference (Monocle3)
+          - cell–cell communication (CellChat)
 
     Interests:
       - name: Outside the lab

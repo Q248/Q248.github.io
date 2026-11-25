@@ -1,0 +1,550 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* Built-in Sass modules you’ll likely use across partials */
+@use "sass:math";
+@use "sass:string";
+
+/* Configure your design tokens BEFORE loading any of your partials.
+   Make sure `_sass/_variables.scss` declares `$max-content-width: 72rem !default;` */
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+/* Your project partials — convert these files to `@use "variables";`
+   (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/* ===== Custom theme layer (Qi Yin) ===== */
+/* ==========================================================================
+   Qi Yin — "warm & scientific" theme layer (on top of al-folio)
+   Change colours here: the six --qy-* values below control the whole look.
+   ========================================================================== */
+
+:root {
+  --qy-bg: #fbf7f1; /* page background (warm cream) */
+  --qy-card: #fffdf9; /* cards / boxes */
+  --qy-text: #2e2a26; /* main text */
+  --qy-muted: #776c61; /* secondary text */
+  --qy-accent: #b4533c; /* terracotta: links, highlights */
+  --qy-accent-2: #5f8a74; /* sage green: tags, small accents */
+  --qy-soft: #f3e7dc; /* soft blush used in bands and badges */
+  --qy-line: rgba(90, 60, 40, 0.13);
+
+  --global-bg-color: var(--qy-bg);
+  --global-card-bg-color: var(--qy-card);
+  --global-text-color: var(--qy-text);
+  --global-text-color-light: var(--qy-muted);
+  --global-theme-color: var(--qy-accent);
+  --global-hover-color: var(--qy-accent);
+  --global-hover-text-color: #fff;
+  --global-divider-color: var(--qy-line);
+  --global-footer-bg-color: #3a2f29;
+  --global-footer-text-color: #d9cfc4;
+  --global-footer-link-color: #fff;
+  --global-highlight-color: var(--qy-accent);
+
+  --qy-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  --qy-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
+    sans-serif;
+}
+
+html[data-theme="dark"] {
+  --qy-bg: #1b1815;
+  --qy-card: #24201c;
+  --qy-text: #ece4da;
+  --qy-muted: #b0a497;
+  --qy-accent: #e58c72;
+  --qy-accent-2: #8fbfa4;
+  --qy-soft: #2e2722;
+  --qy-line: rgba(255, 235, 215, 0.12);
+
+  --global-bg-color: var(--qy-bg);
+  --global-card-bg-color: var(--qy-card);
+  --global-text-color: var(--qy-text);
+  --global-text-color-light: var(--qy-muted);
+  --global-theme-color: var(--qy-accent);
+  --global-hover-color: var(--qy-accent);
+  --global-divider-color: var(--qy-line);
+  --global-footer-bg-color: #12100e;
+  --global-highlight-color: var(--qy-accent);
+}
+
+/* ---------- Typography ---------- */
+body {
+  font-family: var(--qy-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  background-color: var(--qy-bg);
+  color: var(--qy-text);
+}
+h1,
+h2,
+h3,
+h4,
+.post-title,
+.navbar-brand,
+.publications .title,
+.projects .card-title {
+  font-family: var(--qy-serif);
+  letter-spacing: -0.005em;
+}
+article h2,
+.post h2 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin-top: 2.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--qy-line);
+  position: relative;
+}
+article h2::after,
+.post h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 3.2rem;
+  height: 2px;
+  background: var(--qy-accent);
+  border-radius: 2px;
+}
+article h2 a,
+.post h2 a {
+  text-transform: capitalize;
+}
+a {
+  color: var(--qy-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+strong {
+  font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background-color: color-mix(in srgb, var(--qy-bg) 88%, transparent) !important;
+  backdrop-filter: saturate(1.4) blur(8px);
+  -webkit-backdrop-filter: saturate(1.4) blur(8px);
+  border-bottom: 1px solid var(--qy-line);
+  box-shadow: none;
+}
+.navbar .nav-link {
+  font-weight: 500;
+  text-transform: capitalize;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem !important;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.navbar .nav-item.active > .nav-link,
+.navbar .nav-link:hover {
+  background: var(--qy-soft);
+  color: var(--qy-accent) !important;
+}
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* ---------- Hero band (About pages: English + 中文) ---------- */
+.post:has(.profile) > .post-header {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 2.6rem 2.2rem 2.2rem;
+  border-radius: 22px;
+  overflow: hidden;
+  color: #fff;
+  background-color: #0b0a09;
+  /* The hero image: your oocyte (assets/img/hero_oocyte.jpg).
+     To use a different image, put it in assets/img/ and change the file name below. */
+  background-image:
+    linear-gradient(90deg, rgba(11, 10, 9, 0.97) 0%, rgba(11, 10, 9, 0.9) 38%, rgba(11, 10, 9, 0.35) 68%, rgba(11, 10, 9, 0) 100%),
+    url("../img/hero_oocyte.jpg");
+  background-size: cover;
+  background-position: right center;
+  min-height: 250px;
+  box-shadow: 0 14px 40px -18px rgba(90, 40, 25, 0.55);
+}
+.post:has(.profile) > .post-header .post-title {
+  color: #fff;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+.post:has(.profile) > .post-header .post-title .font-weight-bold,
+.post:has(.profile) > .post-header .post-title b,
+.post:has(.profile) > .post-header .post-title strong {
+  font-weight: 700;
+}
+.post:has(.profile) > .post-header .desc {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  margin: 0;
+}
+.post:has(.profile) > .post-header .desc a {
+  color: #ffc4ad;
+}
+.post:has(.profile) > .post-header .post-title,
+.post:has(.profile) > .post-header .desc {
+  max-width: 62%;
+}
+.qy-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+.qy-tags span {
+  font-size: 0.82rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
+/* ---------- Profile photo ---------- */
+.profile img {
+  border-radius: 18px !important;
+  box-shadow: 0 12px 30px -14px rgba(60, 30, 20, 0.5) !important;
+  border: 5px solid var(--qy-card);
+}
+.profile .more-info {
+  font-family: var(--qy-sans) !important;
+  font-size: 0.9rem;
+  color: var(--qy-muted);
+  background: var(--qy-card);
+  border: 1px solid var(--qy-line);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.8rem;
+  line-height: 1.5;
+}
+.profile .more-info p {
+  margin: 0;
+}
+
+/* ---------- Research highlight cards (used in about.md / zh.md) ---------- */
+.qy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0 0.5rem;
+  clear: both;
+}
+.qy-card {
+  background: var(--qy-card);
+  border: 1px solid var(--qy-line);
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem 1.2rem;
+  border-top: 4px solid var(--qy-accent);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.qy-card:nth-child(2) {
+  border-top-color: var(--qy-accent-2);
+}
+.qy-card:nth-child(3) {
+  border-top-color: #c9a15b;
+}
+.qy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -16px rgba(60, 30, 20, 0.45);
+}
+.qy-card h3 {
+  font-size: 1.08rem;
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+.qy-card p {
+  font-size: 0.92rem;
+  color: var(--qy-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+.qy-card .qy-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* ---------- News & latest posts ---------- */
+.news table {
+  border-collapse: separate;
+  border-spacing: 0 0.35rem;
+}
+.news th[scope="row"] {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--qy-accent);
+  white-space: nowrap;
+  padding-right: 1rem !important;
+}
+.news td,
+.news th {
+  border: 0 !important;
+  vertical-align: top;
+}
+
+/* ---------- Publications ---------- */
+.publications ol.bibliography li {
+  background: var(--qy-card);
+  border: 1px solid var(--qy-line);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.9rem;
+  transition: box-shadow 0.2s;
+}
+.publications ol.bibliography li:hover {
+  box-shadow: 0 10px 26px -18px rgba(60, 30, 20, 0.5);
+}
+.publications .abbr abbr.badge,
+.publications .badge {
+  background-color: var(--qy-soft) !important;
+  color: var(--qy-accent) !important;
+  border: 1px solid color-mix(in srgb, var(--qy-accent) 30%, transparent);
+  font-weight: 600;
+  border-radius: 999px !important;
+  padding: 0.3rem 0.5rem;
+}
+.publications .title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.publications .author em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--qy-accent);
+  border-bottom: 0 !important;
+}
+.publications .links .btn {
+  border-radius: 999px !important;
+  border: 1px solid var(--qy-line) !important;
+  color: var(--qy-text) !important;
+  padding: 0.15rem 0.8rem !important;
+  font-size: 0.78rem !important;
+}
+.publications .links .btn:hover {
+  background: var(--qy-accent) !important;
+  border-color: var(--qy-accent) !important;
+  color: #fff !important;
+}
+.publications h2.bibliography {
+  color: var(--qy-soft);
+  font-weight: 700;
+  border: 0;
+}
+.publications h2.bibliography::after {
+  display: none;
+}
+html[data-theme="dark"] .publications h2.bibliography {
+  color: #4a3e36;
+}
+
+/* ---------- Page headers on inner pages ---------- */
+.post:not(:has(.profile)) > .post-header .post-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.post-header .post-description {
+  color: var(--qy-muted);
+}
+
+/* ---------- Projects ---------- */
+.projects .card {
+  border-radius: 18px !important;
+  border: 1px solid var(--qy-line) !important;
+  background: var(--qy-card);
+  overflow: hidden;
+  box-shadow: none;
+}
+.projects .card:hover {
+  box-shadow: 0 14px 32px -18px rgba(60, 30, 20, 0.5) !important;
+}
+.projects .card-img-top {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.projects .card-body {
+  border-top: 4px solid var(--qy-accent);
+}
+.projects h2.category {
+  text-transform: capitalize;
+  color: var(--qy-muted);
+}
+
+/* ---------- Social icons ---------- */
+.social .contact-icons a {
+  color: var(--qy-muted);
+  transition: color 0.2s;
+}
+.social .contact-icons a:hover {
+  color: var(--qy-accent);
+}
+
+/* ---------- Language switch button ---------- */
+.qy-lang {
+  display: inline-block;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--qy-line);
+  background: var(--qy-card);
+  color: var(--qy-text) !important;
+  text-decoration: none !important;
+}
+.qy-lang:hover {
+  background: var(--qy-accent);
+  color: #fff !important;
+}
+
+/* ---------- Footer ---------- */
+footer.fixed-bottom,
+footer.sticky-bottom {
+  font-size: 0.8rem;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 576px) {
+  .post:has(.profile) > .post-header {
+    padding: 2rem 1.3rem 1.6rem;
+    border-radius: 16px;
+    background-image:
+      linear-gradient(180deg, rgba(11, 10, 9, 0.55) 0%, rgba(11, 10, 9, 0.92) 70%),
+      url("../img/hero_oocyte.jpg");
+    background-position: 70% center;
+  }
+  .post:has(.profile) > .post-header .post-title,
+  .post:has(.profile) > .post-header .desc {
+    max-width: 100%;
+  }
+  .profile {
+    width: 70% !important;
+    max-width: 280px;
+    float: none !important;
+    margin: 0 auto 1.2rem !important;
+  }
+}
+
+/* fixes */
+.publications ol.bibliography li .abbr abbr,
+.publications ol.bibliography li .abbr abbr a {
+  background-color: var(--qy-soft) !important;
+  color: var(--qy-accent) !important;
+}
+.post:has(.profile) > .post-header .post-title,
+.post:has(.profile) > .post-header .post-title * {
+  color: #fff !important;
+}
+.projects .card-img-top,
+.projects img {
+  filter: none;
+}
+
+/* ---------- Techniques strip ---------- */
+.qy-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.4rem 0 0.6rem;
+}
+.qy-tech span {
+  background: var(--qy-card);
+  border: 1px solid var(--qy-line);
+  border-radius: 999px;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.9rem;
+  color: var(--qy-text);
+}
+
+/* ---------- Beyond the lab ---------- */
+.qy-beyond {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  background: var(--qy-card);
+  border: 1px solid var(--qy-line);
+  border-radius: 20px;
+  padding: 1.4rem;
+}
+.qy-beyond-text p {
+  margin-top: 0;
+}
+.qy-beyond-photo {
+  margin: 0;
+}
+.qy-beyond-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px -16px rgba(60, 30, 20, 0.55);
+}
+.qy-beyond-photo figcaption {
+  font-size: 0.82rem;
+  color: var(--qy-muted);
+  text-align: center;
+  margin-top: 0.45rem;
+}
+@media (max-width: 576px) {
+  .qy-beyond {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* let About-page text flow beside the photo (both languages) */
+.post article > .clearfix {
+  display: block !important;
+}
+.post article > .clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.post:has(.profile) > .post-header .desc strong {
+  color: #fff !important;
+}
+.qy-beyond {
+  grid-template-columns: 1.6fr 1fr;
+  align-items: start;
+}
+.qy-beyond-photo img {
+  aspect-ratio: 3 / 4;
+  max-height: 360px;
+}
+.post article > .clearfix.table-responsive {
+  overflow: visible !important;
+}
+@media (max-width: 576px) {
+  .qy-beyond {
+    grid-template-columns: 1fr;
+  }
+  .qy-beyond-photo img {
+    max-height: 320px;
+  }
+}

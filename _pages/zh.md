@@ -1,57 +1,101 @@
 ---
-layout: page
-permalink: /zh/
+layout: about
 title: 中文
-description: 发育生物学 · 卵母细胞发育 · 卵泡动态
+permalink: /zh/
 nav: true
 nav_order: 6
+description: 尹奇 · 发育生物学 · 卵母细胞发育 · 卵泡动态
+subtitle: >
+  <strong>尹奇 博士</strong> · 霍华德·休斯医学研究所（HHMI）研究员 · 卡内基科学研究所
+  <span class='qy-tags'><span>卵母细胞发育</span><span>卵泡动态</span><span>减数分裂</span><span>女性生育力</span></span>
+
+profile:
+  align: right
+  image: prof_pic.jpg
+  image_circular: false
+
+selected_papers: false
+social: true
+announcements:
+  enabled: false
+latest_posts:
+  enabled: false
 ---
 
-<div class="row">
-  <div class="col-sm-8 mt-3 mt-md-0">
+<p style="text-align:right;margin:-0.5rem 0 1rem"><a class="qy-lang" href="{{ '/' | relative_url }}">English</a></p>
 
-<p><strong>Qi Yin 博士</strong><br>
-卡内基科学研究所（Carnegie Institution for Science）研究员（Research Associate）· Allan Spradling 实验室<br>
-美国马里兰州巴尔的摩</p>
+我是一名发育生物学家，研究调控小鼠**卵母细胞生长与卵泡发育**的细胞与分子机制。我结合遗传模型、整体组织三维成像和单细胞转录组学，探究卵泡如何分化，以及卵母细胞如何重组其细胞核、细胞器和细胞骨架，为减数分裂做准备。
 
-<p>我是一名发育生物学家，致力于研究调控<strong>卵母细胞发育和卵泡动态</strong>的细胞与分子机制，以及这些过程如何影响女性生育力。</p>
+在 Allan Spradling 实验室（HHMI / 卡内基科学研究所），我鉴定出功能不同的卵泡波次，并证明第一波卵泡主要驱动卵泡膜/间质细胞的形成和雄激素的产生，而非直接参与生育（_eLife_，2025）。我最新的工作发现，卵母细胞的 **Balbiani 小体**在生长卵泡中重新组装、继续进行细胞器筛选，并在解散后影响**细胞核位置**（_bioRxiv_，2026）。目前我正在研究卵母细胞生长和减数分裂准备过程中的细胞核居中，以及无中心粒微管组织中心（acMTOC）的动态。
 
-<p>在 Allan Spradling 博士实验室，我鉴定出小鼠卵巢中功能不同的卵泡波次，并证明第一波卵泡主要促进卵泡膜细胞的形成和雄激素的产生，而非直接支持生育。</p>
+我在中国科学院大学获得发育生物学博士学位，期间建立了基于单倍体胚胎干细胞的小鼠 CRISPR–Cas9 遗传筛选方法（_Cell Stem Cell_，2015），之后在英国剑桥大学格登研究所担任研究员。
 
-<p>我目前的研究聚焦于卵母细胞生长和减数分裂准备过程中的<strong>细胞核定位</strong>以及<strong>无中心粒微管组织中心（acMTOC）的动态变化</strong>。</p>
-
-<p>加入卡内基科学研究所之前，我曾在英国剑桥大学格登研究所（Gurdon Institute）担任研究员。我在中国科学院大学获得发育生物学博士学位，期间从事单倍体胚胎干细胞及小鼠 CRISPR 遗传筛选研究。</p>
-
+<div class="qy-cards">
+  <div class="qy-card">
+    <span class="qy-icon">🌸</span>
+    <h3>卵泡波次</h3>
+    <p>不同波次的卵泡如何塑造卵巢生理、卵泡膜细胞及雄激素的产生。</p>
   </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/prof_pic.jpg" alt="Qi Yin" class="img-fluid rounded z-depth-1" %}
+  <div class="qy-card">
+    <span class="qy-icon">🔬</span>
+    <h3>卵母细胞内部组织</h3>
+    <p>生长卵母细胞中的 Balbiani 小体动态、细胞器筛选、细胞核居中及 acMTOC 组装。</p>
+  </div>
+  <div class="qy-card">
+    <span class="qy-icon">🧬</span>
+    <h3>卵母细胞成熟</h3>
+    <p>长期目标：阐明跨物种调控卵母细胞从原始卵泡到减数分裂成熟的机制。</p>
   </div>
 </div>
 
-## 研究方向
+## 技术专长
 
-- **卵泡波次动态与卵巢生理：** 揭示早期第一波卵泡如何重塑并促进卵泡膜/间质细胞扩增及类固醇激素合成。
-- **细胞核定位与细胞骨架组织：** 研究卵泡生长和减数分裂准备过程中的细胞核居中、细胞质重组及 acMTOC 动态。
-- **长期目标：** 阐明从原始卵泡阶段到完全生长及减数分裂成熟过程中，跨物种调控卵母细胞成熟的机制。
+<div class="qy-tech">
+  <span>✂️ CRISPR/Cas9 基因编辑</span>
+  <span>🐭 小鼠遗传模型</span>
+  <span>🧫 单倍体胚胎干细胞</span>
+  <span>🥚 卵母细胞与卵泡培养</span>
+  <span>🔭 整体组织三维成像（Imaris）</span>
+  <span>📊 单细胞测序分析（Seurat、Monocle3、CellChat）</span>
+</div>
 
-## 教育与工作经历
+## 最新动态
 
-- 2020 至今 — 研究员，卡内基科学研究所，美国
-- 2018–2019 — 研究员，剑桥大学格登研究所，英国
-- 2017 — 博士，发育生物学，中国科学院大学
-- 2013 — 硕士，发育生物学，中国科学院大学
-- 2011 — 学士，生物学，安徽大学
+{% include news.liquid limit=true %}
 
 ## 代表性论文
 
-- **Yin Q**, Spradling AC. Distinct waves of ovarian follicles contribute to mouse oocyte production. _eLife_. 2025. [[链接]](https://elifesciences.org/articles/107352)
-- **Yin Q**, Wang H, Li N, et al. Dosage effect of multiple genes accounts for multisystem disorder of myotonic dystrophy type 1. _Cell Research_. 2020. [[链接]](https://pmc.ncbi.nlm.nih.gov/articles/PMC7015062/)
-- Zhong C\*, **Yin Q\***, Xie Z\*, et al. CRISPR-Cas9-mediated genetic screening in mice with haploid embryonic stem cells. _Cell Stem Cell_. 2015.
+{% include selected_papers.liquid %}
 
-\* 共同第一作者。[查看全部论文 →]({{ '/publications/' | relative_url }})
+<p>* 共同第一作者。<a href="{{ '/publications/' | relative_url }}">查看全部论文 →</a></p>
+
+## 教育与工作经历
+
+| 时间      | 经历                                       |
+| --------- | ------------------------------------------ |
+| 2020 至今 | 研究员，霍华德·休斯医学研究所 / 卡内基科学研究所，美国 |
+| 2018–2019 | 研究员，剑桥大学格登研究所，英国           |
+| 2017      | 博士，发育生物学，中国科学院大学           |
+| 2013      | 硕士，发育生物学，中国科学院大学           |
+| 2011      | 学士，生物学，安徽大学                     |
+
+## 工作之余
+
+<div class="qy-beyond">
+  <div class="qy-beyond-text">
+    <p>工作之余，我喜欢尽可能多地走到户外。<strong>跑步</strong>让我在漫长的实验中保持专注和平衡，<strong>徒步</strong>带我穿越森林、登上山间小径，<strong>旅行</strong>让我看到新的风景，结识来自不同文化的人。</p>
+    <div class="qy-tech">
+      <span>🏃 跑步</span>
+      <span>🥾 徒步</span>
+      <span>✈️ 旅行</span>
+    </div>
+  </div>
+  <figure class="qy-beyond-photo">
+    <img src="{{ '/assets/img/autumn_road.jpg' | relative_url }}" alt="秋日森林中的道路" loading="lazy">
+    <figcaption>秋色之路</figcaption>
+  </figure>
+</div>
 
 ## 联系方式
 
 邮箱：yin@carnegiescience.edu · ORCID：[0000-0001-5628-5015](https://orcid.org/0000-0001-5628-5015)
-
-<p class="mt-4"><a href="{{ '/' | relative_url }}">English version →</a></p>

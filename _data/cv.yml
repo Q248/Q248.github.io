@@ -13,14 +13,15 @@ cv:
 
   sections:
     Appointments:
-      - company: Carnegie Institution for Science
+      - company: Howard Hughes Medical Institute · Carnegie Institution for Science
         position: Research Associate, Spradling Lab
         location: Baltimore, MD, USA
         start_date: 2020
         end_date: present
         highlights:
           - Identified distinct functional waves of ovarian follicles in the mouse.
-          - Studying nuclear positioning and acMTOC dynamics during oocyte growth and meiotic preparation.
+          - Showed that the oocyte Balbiani body reassembles in growing follicles and influences nuclear position.
+          - Studying nuclear centralization and acMTOC dynamics during oocyte growth and meiotic preparation.
 
       - company: Gurdon Institute, University of Cambridge
         position: Research Associate

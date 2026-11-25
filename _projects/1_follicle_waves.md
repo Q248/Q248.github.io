@@ -11,4 +11,4 @@ I identified distinct waves of ovarian follicles in mice and showed that early *
 
 This work, carried out in Dr. Allan Spradling's laboratory, reframes how the first follicles formed in the ovary contribute to ovarian function.
 
-{% cite yin2025waves %}
+{% cite yin2025distinct %}

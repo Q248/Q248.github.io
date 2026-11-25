@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My new website is live. :sparkles:
+My new website is live, now with a [中文](/zh/) page.

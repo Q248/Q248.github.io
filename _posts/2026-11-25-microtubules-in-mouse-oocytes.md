@@ -18,11 +18,12 @@ In oocytes of antral follicles, the microtubules become short. Do they have a ro
 
 
 
-<div markdown="1" style="font-size: 0.85em; color: #6f665d;">
-
-1. Nagamatsu G, Shimamoto S, Hamazaki N, Nishimura Y, Hayashi K. Mechanical stress accompanied with nuclear rotation is involved in the dormant state of mouse oocytes. Sci Adv. 2019 Jun 26;5(6):eaav9960. doi: 10.1126/sciadv.aav9960. PMID: 31249869; PMCID: PMC6594774.
-
-2. Yin Q, Spradling AC. The mouse oocyte Balbiani body reassembles in growing follicles to continue organelle selection and upon dispersal influences nuclear position. bioRxiv [Preprint]. 2026 Sep 3:2026.09.02.748954. doi: 10.64898/2026.09.02.748954.
-
-3. Cheng S, Altmeppen G, So C, Welp LM, Penir S, Ruhwedel T, Menelaou K, Harasimov K, Stützer A, Blayney M, Elder K, Möbius W, Urlaub H, Schuh M. Mammalian oocytes store mRNAs in a mitochondria-associated membraneless compartment. Science. 2022 Oct 21;378(6617):eabq4835. doi: 10.1126/science.abq4835. Epub 2022 Oct 21. PMID: 36264786.
+<div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.12); font-size: 0.85em; color: #6f665d;">
+<p><strong>References</strong></p>
+<ol style="padding-left: 1.4em; margin: 0;">
+<li style="margin-bottom: 0.6em;">Nagamatsu G, Shimamoto S, Hamazaki N, Nishimura Y, Hayashi K. Mechanical stress accompanied with nuclear rotation is involved in the dormant state of mouse oocytes. Sci Adv. 2019 Jun 26;5(6):eaav9960. doi: 10.1126/sciadv.aav9960. PMID: 31249869; PMCID: PMC6594774.</li>
+<li style="margin-bottom: 0.6em;">Yin Q, Spradling AC. The mouse oocyte Balbiani body reassembles in growing follicles to continue organelle selection and upon dispersal influences nuclear position. bioRxiv [Preprint]. 2026 Sep 3:2026.09.02.748954. doi: 10.64898/2026.09.02.748954.</li>
+<li style="margin-bottom: 0.6em;">Cheng S, Altmeppen G, So C, Welp LM, Penir S, Ruhwedel T, Menelaou K, Harasimov K, Stützer A, Blayney M, Elder K, Möbius W, Urlaub H, Schuh M. Mammalian oocytes store mRNAs in a mitochondria-associated membraneless compartment. Science. 2022 Oct 21;378(6617):eabq4835. doi: 10.1126/science.abq4835. Epub 2022 Oct 21. PMID: 36264786.</li>
+</ol>
+</div>
 

@@ -1,7 +1,7 @@
 cv:
   name: Qi Yin, Ph.D.
   label: Developmental Biologist
-  email: yin@carnegiescience.edu
+  email: yin[at]carnegiescience.edu
   location: Baltimore, MD
   summary: Developmental biologist studying oocyte development, ovarian follicle dynamics and female fertility.
 
@@ -24,7 +24,7 @@ cv:
           - Studying nuclear centralization and acMTOC dynamics during oocyte growth and meiotic preparation.
 
       - company: Gurdon Institute, University of Cambridge
-        position: Research Associate
+        position: Postdoctoral Fellow
         location: Cambridge, UK
         start_date: 2018
         end_date: 2019
@@ -48,6 +48,7 @@ cv:
         area: Biology
         studyType: B.S.
         location: Hefei, China
+        start_date: 2007
         end_date: 2011
 
     Skills:

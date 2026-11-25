@@ -582,3 +582,12 @@ footer.sticky-bottom {
   color: var(--qy-muted);
   margin-top: 0.4rem;
 }
+
+/* blog titles: keep the capitalization I type */
+.post:not(:has(.profile)) > .post-header .post-title {
+  text-transform: none;
+}
+/* headings start below the photo */
+.post article h2 {
+  clear: both;
+}

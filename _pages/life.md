@@ -19,7 +19,7 @@ Outside the lab, I enjoy running, hiking and traveling.
     <figcaption>Acadia National Park - Oct 2026</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/assets/img/Yellowstone.jpg' | relative_url }}" alt="A forest road in autumn" loading="lazy">
+    <img src="{{ '/assets/img/Yellowstone.jpg' | relative_url }}" alt="Summer Travel" loading="lazy">
     <figcaption>Yellowstone National Park - Jun 2022</figcaption>
   </figure>
 </div>

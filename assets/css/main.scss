@@ -548,3 +548,15 @@ footer.sticky-bottom {
     max-height: 320px;
   }
 }
+
+/* ---------- Small muted line (hobbies, notes) ---------- */
+.qy-aside {
+  font-size: 0.9rem;
+  color: var(--qy-muted);
+  margin-top: 0.8rem;
+}
+/* calmer, more compact header band */
+.post:has(.profile) > .post-header {
+  min-height: 0;
+  padding: 2.1rem 2.2rem 1.9rem;
+}

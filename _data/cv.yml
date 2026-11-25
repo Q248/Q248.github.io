@@ -50,7 +50,7 @@ cv:
         location: Hefei, China
         end_date: 2011
 
-    Skills:
+    Techniques:
       - name: Genetic engineering
         keywords: "CRISPR/Cas9 genome editing, mouse model generation, haploid embryonic stem cells"
       - name: Cell & embryo biology
@@ -59,3 +59,7 @@ cv:
         keywords: "Whole-mount imaging, 3D reconstruction (Imaris)"
       - name: Single-cell genomics
         keywords: "scRNA-seq analysis (Seurat, Monocle3, CellChat)"
+
+    Interests:
+      - name: Outside the lab
+        keywords: "Running, hiking, traveling"

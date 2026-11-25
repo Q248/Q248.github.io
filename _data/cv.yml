@@ -1,0 +1,60 @@
+cv:
+  name: Qi Yin, Ph.D.
+  label: Developmental Biologist
+  email: yin@carnegiescience.edu
+  location: Baltimore, MD
+  summary: Developmental biologist studying oocyte development, ovarian follicle dynamics and female fertility.
+
+  social_networks:
+    - network: ORCID
+      username: 0000-0001-5628-5015
+    - network: GitHub
+      username: Q248
+
+  sections:
+    Appointments:
+      - company: Carnegie Institution for Science
+        position: Research Associate, Spradling Lab
+        location: Baltimore, MD, USA
+        start_date: 2020
+        end_date: present
+        highlights:
+          - Identified distinct functional waves of ovarian follicles in the mouse.
+          - Studying nuclear positioning and acMTOC dynamics during oocyte growth and meiotic preparation.
+
+      - company: Gurdon Institute, University of Cambridge
+        position: Research Associate
+        location: Cambridge, UK
+        start_date: 2018
+        end_date: 2019
+
+    Education:
+      - institution: University of Chinese Academy of Sciences
+        area: Developmental Biology
+        studyType: Ph.D.
+        location: Beijing, China
+        start_date: 2013
+        end_date: 2017
+
+      - institution: University of Chinese Academy of Sciences
+        area: Developmental Biology
+        studyType: M.S.
+        location: Beijing, China
+        start_date: 2011
+        end_date: 2013
+
+      - institution: Anhui University
+        area: Biology
+        studyType: B.S.
+        location: Hefei, China
+        end_date: 2011
+
+    Skills:
+      - name: Genetic engineering
+        keywords: "CRISPR/Cas9 genome editing, mouse model generation, haploid embryonic stem cells"
+      - name: Cell & embryo biology
+        keywords: "Stem cell culture, oocyte and follicle culture"
+      - name: Imaging
+        keywords: "Whole-mount imaging, 3D reconstruction (Imaris)"
+      - name: Single-cell genomics
+        keywords: "scRNA-seq analysis (Seurat, Monocle3, CellChat)"

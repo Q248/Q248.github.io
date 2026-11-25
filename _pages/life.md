@@ -10,19 +10,15 @@ nav_order: 6
 Outside the lab, I enjoy running, hiking and traveling.
 
 <div class="qy-gallery">
+{% assign photos = site.data.life_photos | sort: "date" | reverse %}
+{% for p in photos %}
   <figure>
-    <img src="{{ '/assets/img/life_mountain.jpg' | relative_url }}" alt="Hiking in the mountains" loading="lazy">
-    <figcaption>Mount Rainier - Sep 2023</figcaption>
+    <img src="{{ '/assets/img/' | append: p.file | relative_url }}" alt="{{ p.alt }}" loading="lazy">
+    <figcaption>{{ p.caption }} · {{ p.date | date: "%b %Y" }}</figcaption>
   </figure>
-  <figure>
-    <img src="{{ '/assets/img/autumn_road.jpg' | relative_url }}" alt="A forest road in autumn" loading="lazy">
-    <figcaption>Acadia National Park - Oct 2026</figcaption>
-  </figure>
-  <figure>
-    <img src="{{ '/assets/img/Yellowstone.jpg' | relative_url }}" alt="Summer Travel" loading="lazy">
-    <figcaption>Yellowstone National Park - Jun 2022</figcaption>
-  </figure>
+{% endfor %}
 </div>
+
 
 {% if site.categories.life %}
 <h2>Updates</h2>

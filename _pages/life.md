@@ -1,6 +1,6 @@
 ---
 layout: page
-title: life
+title: Life
 permalink: /life/
 description: Beyond the lab
 nav: true

@@ -621,3 +621,25 @@ footer .container,
 footer #busuanzi_site_uv {
   color: #d9cfc4 !important;
 }
+
+/* ===== Figures in blog posts =====
+   Position: fig-left | fig-right | fig-center
+   Size (optional): fig-small | fig-large            */
+.fig-left, .fig-right, .fig-center { margin-top: 0.3rem; margin-bottom: 1rem; }
+.fig-left   { float: left;  width: 45%; margin-right: 1.5rem; }
+.fig-right  { float: right; width: 45%; margin-left: 1.5rem; }
+.fig-center { width: 70%; margin-left: auto; margin-right: auto; text-align: center; }
+
+.fig-small.fig-left,  .fig-small.fig-right  { width: 33%; }
+.fig-large.fig-left,  .fig-large.fig-right  { width: 60%; }
+.fig-small.fig-center { width: 45%; }
+.fig-large.fig-center { width: 100%; }
+
+.fig-left img, .fig-right img, .fig-center img { width: 100%; border-radius: 8px; }
+.fig-left figcaption, .fig-right figcaption, .fig-center figcaption {
+  font-size: 0.85em; color: #6f665d; margin-top: 0.4rem; text-align: left;
+}
+/* phones: every figure full width, no wrapping */
+@media (max-width: 700px) {
+  .fig-left, .fig-right, .fig-center { float: none; width: 100% !important; margin: 1rem 0; }
+}

@@ -643,3 +643,15 @@ footer #busuanzi_site_uv {
 @media (max-width: 700px) {
   .fig-left, .fig-right, .fig-center { float: none; width: 100% !important; margin: 1rem 0; }
 }
+
+/* ---------- Protocols list ---------- */
+.qy-protocols { list-style: none; padding: 0; margin: 1rem 0; }
+.qy-protocols li {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.9rem 1.1rem; margin-bottom: 0.7rem;
+  background: var(--qy-card); border: 1px solid var(--qy-line); border-radius: 12px;
+}
+.qy-protocol-title { font-weight: 600; font-size: 1.05rem; }
+.qy-protocol-desc { font-size: 0.88rem; color: var(--qy-muted); margin-top: 0.2rem; }
+.qy-protocol-pdf { font-size: 1.7rem; color: #c0392b !important; flex-shrink: 0; }
+.qy-protocol-pdf:hover { opacity: 0.75; }

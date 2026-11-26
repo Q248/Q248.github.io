@@ -4,7 +4,6 @@ title: Follicle wave dynamics
 description: How distinct waves of ovarian follicles shape ovarian physiology and fertility
 importance: 1
 category: research
-related_publications: true
 ---
 <figure class="fig-right">
   <img src="/assets/img/2026/1_Distinct_waves.jpg" alt="Schematic of a mouse ovary showing wave 1, wave 1.5 and wave 2 follicles">
@@ -25,7 +24,7 @@ So many interesting questions remain unanswered.
 
 
 <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.12); font-size: 0.85em; color: #6f665d;">
-<p><strong>References</strong></p>
+<p style="font-size: 1.18em; color: #2e2a26;"><strong>References</strong></p>
 <ol style="padding-left: 1.4em; margin: 0;">
 <li style="margin-bottom: 0.6em;">Hirshfield AN. Heterogeneity of cell populations that contribute to the formation of primordial follicles in rats. <em>Biol Reprod</em>. 1992 Sep;47(3):466-72. doi: 10.1095/biolreprod47.3.466. PMID: 1511099.</li>
 <li style="margin-bottom: 0.6em;">Zheng W, Zhang H, Gorre N, Risal S, Shen Y, Liu K. Two classes of ovarian primordial follicles exhibit distinct developmental dynamics and physiological functions. <em>Hum Mol Genet</em>. 2014 Feb 15;23(4):920-8. doi: 10.1093/hmg/ddt486. Epub 2013 Oct 1. PMID: 24087793; PMCID: PMC3900105.</li>

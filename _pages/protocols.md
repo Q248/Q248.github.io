@@ -8,7 +8,8 @@ nav_order: 3.5
 ---
 
 <ul class="qy-protocols">
-{%- for p in site.data.protocols -%}
+{%- assign protos = site.data.protocols | sort_natural: "title" -%}
+{%- for p in protos -%}
 <li>
 <div class="qy-protocol-text">
 <a class="qy-protocol-title" href="{{ p.page | relative_url }}" target="_blank" rel="noopener">{{ p.title }}</a>

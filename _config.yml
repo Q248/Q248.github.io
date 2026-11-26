@@ -13,7 +13,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  · Views: <span id="busuanzi_site_pv">–</span>
+  · Visitors: <span id="busuanzi_site_uv">–</span>
   <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
 keywords: developmental biology, oocyte, ovarian follicle, female fertility, meiosis, Qi Yin
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)

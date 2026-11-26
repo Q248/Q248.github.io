@@ -14,7 +14,7 @@ footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
     · Views: <span id="busuanzi_site_pv">–</span>
-  <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
+  <script>(function(){try{var q=location.search;if(q.indexOf('notrack=1')>-1)localStorage.setItem('qy_notrack','1');if(q.indexOf('notrack=0')>-1)localStorage.removeItem('qy_notrack');if(localStorage.getItem('qy_notrack')==='1')return;}catch(e){}var s=document.createElement('script');s.src='https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js';s.defer=true;document.body.appendChild(s);})();</script>
 keywords: developmental biology, oocyte, ovarian follicle, female fertility, meiosis, Qi Yin
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🔬

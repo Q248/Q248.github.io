@@ -614,3 +614,10 @@ footer.sticky-bottom {
   background: rgba(120, 90, 70, 0.35);
   border-radius: 3px;
 }
+
+/* visitor counter in the footer: same light color as the footer text */
+footer,
+footer .container,
+footer #busuanzi_site_pv {
+  color: #d9cfc4 !important;
+}

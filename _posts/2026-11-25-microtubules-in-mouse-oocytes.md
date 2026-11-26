@@ -15,6 +15,11 @@ In oocytes of secondary follicles, the microtubules grow further and may interac
 
 In oocytes of antral follicles, the microtubules become short. Do they have a role in the mitochondria-associated ribonucleoprotein domain (MARDO) (2, 5)?
 
+<figure style="max-width: 400px; margin: 1.5rem auto; text-align: center;">
+  <img src="/assets/img/oocyte_microtubules.jpg" alt="Mouse oocyte microtubules" style="width: 100%; border-radius: 8px;">
+  <figcaption style="font-size: 0.85em; color: #6f665d; margin-top: 0.4rem;">Figure 1. A growing mouse oocyte: microtubules (green) and nucleus (blue).</figcaption>
+</figure>
+
 
 
 <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.12); font-size: 0.85em; color: #6f665d;">

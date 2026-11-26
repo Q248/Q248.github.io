@@ -4,7 +4,7 @@ title: Whole-mount immunostaining of mouse ovaries
 permalink: /protocols/ovary-staining/
 ---
 
-**Purpose:** What this protocol is for.
+**Purpose:** What this protocol is for whole-mount immunostaining of tissues.
 
 **Materials**
 - Item 1

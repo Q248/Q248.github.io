@@ -221,16 +221,6 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
-  # files left over from the old site (safe to delete from GitHub any time)
-  - index.md
-  - cv.md
-  - research.md
-  - contact.md
-  - publications.md
-  - Photo
-  - Website
-  - profile.jpg
-  - assets/css/style.css
   - AGENTS.md
   - HOW_TO_UPDATE.md
   - 更新指南.md

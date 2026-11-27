@@ -32,21 +32,27 @@
 @use "teachings";
 @use "typograms";
 
-/* ===== Custom theme layer (Qi Yin) ===== */
 /* ==========================================================================
-   Qi Yin — "warm & scientific" theme layer (on top of al-folio)
-   Change colours here: the six --qy-* values below control the whole look.
+   Qi Yin — custom theme (on top of al-folio)
+
+   Sections:
+     1. Colors & fonts        5. News & publications   9. Protocols
+     2. Text & headings       6. Projects              10. Footer
+     3. Menu (navbar)         7. Blog figures          11. Phones
+     4. About page            8. Life page
+
+   To change the colors of the whole site, edit the --qy-* values in section 1.
    ========================================================================== */
 
+/* ---------- 1. Colors & fonts ---------- */
 :root {
   --qy-bg: #fbf7f1; /* page background (warm cream) */
   --qy-card: #fffdf9; /* cards / boxes */
   --qy-text: #2e2a26; /* main text */
   --qy-muted: #776c61; /* secondary text */
   --qy-accent: #b4533c; /* terracotta: links, highlights */
-  --qy-accent-2: #5f8a74; /* sage green: tags, small accents */
-  --qy-soft: #f3e7dc; /* soft blush used in bands and badges */
-  --qy-line: rgba(90, 60, 40, 0.13);
+  --qy-soft: #f3e7dc; /* soft blush: badges, menu highlight */
+  --qy-line: rgba(90, 60, 40, 0.13); /* thin lines */
 
   --global-bg-color: var(--qy-bg);
   --global-card-bg-color: var(--qy-card);
@@ -65,14 +71,13 @@
   --qy-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
     sans-serif;
 }
-
+/* dark mode */
 html[data-theme="dark"] {
   --qy-bg: #1b1815;
   --qy-card: #24201c;
   --qy-text: #ece4da;
   --qy-muted: #b0a497;
   --qy-accent: #e58c72;
-  --qy-accent-2: #8fbfa4;
   --qy-soft: #2e2722;
   --qy-line: rgba(255, 235, 215, 0.12);
 
@@ -87,7 +92,7 @@ html[data-theme="dark"] {
   --global-highlight-color: var(--qy-accent);
 }
 
-/* ---------- Typography ---------- */
+/* ---------- 2. Text & headings ---------- */
 body {
   font-family: var(--qy-sans);
   font-weight: 400;
@@ -106,31 +111,6 @@ h4,
   font-family: var(--qy-serif);
   letter-spacing: -0.005em;
 }
-article h2,
-.post h2 {
-  font-size: 1.55rem;
-  font-weight: 600;
-  margin-top: 2.6rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--qy-line);
-  position: relative;
-}
-article h2::after,
-.post h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 3.2rem;
-  height: 2px;
-  background: var(--qy-accent);
-  border-radius: 2px;
-}
-article h2 a,
-.post h2 a {
-  text-transform: capitalize;
-}
 a {
   color: var(--qy-accent);
   text-decoration-thickness: 1px;
@@ -140,7 +120,57 @@ strong {
   font-weight: 600;
 }
 
-/* ---------- Navbar ---------- */
+/* section headings: grey line across the column + orange line under the text */
+article h2,
+.post h2 {
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin-top: 2.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+}
+.post article h2 {
+  clear: both; /* start below a floating photo or figure */
+}
+.post h2:not(.bibliography),
+article h2:not(.bibliography) {
+  display: grid;
+  grid-template-columns: fit-content(100%);
+  border-bottom: 1px solid var(--qy-line);
+  padding-bottom: 0;
+}
+.post h2:not(.bibliography)::after,
+article h2:not(.bibliography)::after {
+  content: "";
+  grid-column: 1;
+  height: 2px;
+  margin-top: 0.35rem;
+  margin-bottom: -1px;
+  background: var(--qy-accent);
+  border-radius: 2px;
+}
+article h2 a,
+.post h2 a {
+  text-transform: capitalize;
+}
+
+/* page titles on inner pages (Publications, Blog posts, Protocols, …) */
+.post:not(:has(.profile)) > .post-header .post-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.post-header .post-description {
+  color: var(--qy-muted);
+}
+
+/* small grey line of text (e.g. under the 中文 bio) */
+.qy-aside {
+  font-size: 0.9rem;
+  color: var(--qy-muted);
+  margin-top: 0.8rem;
+}
+
+/* ---------- 3. Menu (navbar) ---------- */
 .navbar {
   background-color: color-mix(in srgb, var(--qy-bg) 88%, transparent) !important;
   backdrop-filter: saturate(1.4) blur(8px);
@@ -166,30 +196,33 @@ strong {
   font-weight: 600;
 }
 
-/* ---------- Hero band (About pages: English + 中文) ---------- */
+/* ---------- 4. About page (English + 中文) ---------- */
+/* dark header band with the oocyte image.
+   To use a different image, put it in assets/img/ and change the file name below. */
 .post:has(.profile) > .post-header {
   position: relative;
   margin: 0 0 2rem;
-  padding: 2.6rem 2.2rem 2.2rem;
+  padding: 2.1rem 2.2rem 1.9rem;
   border-radius: 22px;
   overflow: hidden;
   color: #fff;
   background-color: #0b0a09;
-  /* The hero image: your oocyte (assets/img/hero_oocyte.jpg).
-     To use a different image, put it in assets/img/ and change the file name below. */
   background-image:
     linear-gradient(90deg, rgba(11, 10, 9, 0.97) 0%, rgba(11, 10, 9, 0.9) 38%, rgba(11, 10, 9, 0.35) 68%, rgba(11, 10, 9, 0) 100%),
     url("../img/hero_oocyte.jpg");
   background-size: cover;
   background-position: right center;
-  min-height: 250px;
   box-shadow: 0 14px 40px -18px rgba(90, 40, 25, 0.55);
 }
 .post:has(.profile) > .post-header .post-title {
-  color: #fff;
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   font-weight: 400;
   margin-bottom: 0.35rem;
+}
+.post:has(.profile) > .post-header .post-title,
+.post:has(.profile) > .post-header .post-title *,
+.post:has(.profile) > .post-header .desc strong {
+  color: #fff !important;
 }
 .post:has(.profile) > .post-header .post-title .font-weight-bold,
 .post:has(.profile) > .post-header .post-title b,
@@ -208,89 +241,58 @@ strong {
 .post:has(.profile) > .post-header .desc {
   max-width: 62%;
 }
-.qy-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 1rem;
-}
-.qy-tags span {
-  font-size: 0.82rem;
-  padding: 0.2rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  color: #fff;
-}
 
-/* ---------- Profile photo ---------- */
+/* profile photo */
 .profile img {
   border-radius: 18px !important;
   box-shadow: 0 12px 30px -14px rgba(60, 30, 20, 0.5) !important;
   border: 5px solid var(--qy-card);
 }
-.profile .more-info {
-  font-family: var(--qy-sans) !important;
-  font-size: 0.9rem;
-  color: var(--qy-muted);
-  background: var(--qy-card);
-  border: 1px solid var(--qy-line);
-  border-radius: 14px;
-  padding: 0.75rem 1rem;
-  margin-top: 0.8rem;
-  line-height: 1.5;
-}
-.profile .more-info p {
-  margin: 0;
-}
 
-/* ---------- Research highlight cards (used in about.md / zh.md) ---------- */
-.qy-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1rem;
-  margin: 1.4rem 0 0.5rem;
+/* let the bio text flow beside the photo */
+.post article > .clearfix {
+  display: block !important;
+}
+.post article > .clearfix::after {
+  content: "";
+  display: table;
   clear: both;
 }
-.qy-card {
-  background: var(--qy-card);
-  border: 1px solid var(--qy-line);
-  border-radius: 16px;
-  padding: 1.1rem 1.2rem 1.2rem;
-  border-top: 4px solid var(--qy-accent);
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-}
-.qy-card:nth-child(2) {
-  border-top-color: var(--qy-accent-2);
-}
-.qy-card:nth-child(3) {
-  border-top-color: #c9a15b;
-}
-.qy-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px -16px rgba(60, 30, 20, 0.45);
-}
-.qy-card h3 {
-  font-size: 1.08rem;
-  margin: 0 0 0.4rem;
-  font-weight: 600;
-}
-.qy-card p {
-  font-size: 0.92rem;
-  color: var(--qy-muted);
-  margin: 0;
-  line-height: 1.55;
-}
-.qy-card .qy-icon {
-  font-size: 1.3rem;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  display: block;
+.post article > .clearfix.table-responsive {
+  overflow: visible !important;
 }
 
-/* ---------- News & latest posts ---------- */
+/* News and Selected Publications in scroll boxes */
+.post:has(.profile) .news .table-responsive {
+  max-height: 21rem; /* about 5 news items */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.post:has(.profile) .publications {
+  max-height: 34rem; /* about 3 papers */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.post:has(.profile) .news .table-responsive::-webkit-scrollbar,
+.post:has(.profile) .publications::-webkit-scrollbar {
+  width: 6px;
+}
+.post:has(.profile) .news .table-responsive::-webkit-scrollbar-thumb,
+.post:has(.profile) .publications::-webkit-scrollbar-thumb {
+  background: rgba(120, 90, 70, 0.35);
+  border-radius: 3px;
+}
+
+/* social icons */
+.social .contact-icons a {
+  color: var(--qy-muted);
+  transition: color 0.2s;
+}
+.social .contact-icons a:hover {
+  color: var(--qy-accent);
+}
+
+/* ---------- 5. News & publications ---------- */
 .news table {
   border-collapse: separate;
   border-spacing: 0 0.35rem;
@@ -308,7 +310,6 @@ strong {
   vertical-align: top;
 }
 
-/* ---------- Publications ---------- */
 .publications ol.bibliography li {
   background: var(--qy-card);
   border: 1px solid var(--qy-line);
@@ -320,26 +321,34 @@ strong {
 .publications ol.bibliography li:hover {
   box-shadow: 0 10px 26px -18px rgba(60, 30, 20, 0.5);
 }
+/* journal badge (e.g. "eLife") */
 .publications .abbr abbr.badge,
 .publications .badge {
-  background-color: var(--qy-soft) !important;
-  color: var(--qy-accent) !important;
   border: 1px solid color-mix(in srgb, var(--qy-accent) 30%, transparent);
   font-weight: 600;
   border-radius: 999px !important;
   padding: 0.3rem 0.5rem;
+}
+.publications .abbr abbr.badge,
+.publications .badge,
+.publications ol.bibliography li .abbr abbr,
+.publications ol.bibliography li .abbr abbr a {
+  background-color: var(--qy-soft) !important;
+  color: var(--qy-accent) !important;
 }
 .publications .title {
   font-size: 1.08rem;
   font-weight: 600;
   line-height: 1.4;
 }
+/* your name in author lists */
 .publications .author em {
   font-style: normal;
   font-weight: 700;
   color: var(--qy-accent);
   border-bottom: 0 !important;
 }
+/* DOI / HTML buttons */
 .publications .links .btn {
   border-radius: 999px !important;
   border: 1px solid var(--qy-line) !important;
@@ -352,6 +361,7 @@ strong {
   border-color: var(--qy-accent) !important;
   color: #fff !important;
 }
+/* year headings on the Publications page */
 .publications h2.bibliography {
   color: var(--qy-soft);
   font-weight: 700;
@@ -364,17 +374,7 @@ html[data-theme="dark"] .publications h2.bibliography {
   color: #4a3e36;
 }
 
-/* ---------- Page headers on inner pages ---------- */
-.post:not(:has(.profile)) > .post-header .post-title {
-  font-size: 2.4rem;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-.post-header .post-description {
-  color: var(--qy-muted);
-}
-
-/* ---------- Projects ---------- */
+/* ---------- 6. Projects ---------- */
 .projects .card {
   border-radius: 18px !important;
   border: 1px solid var(--qy-line) !important;
@@ -397,171 +397,62 @@ html[data-theme="dark"] .publications h2.bibliography {
   color: var(--qy-muted);
 }
 
-/* ---------- Social icons ---------- */
-.social .contact-icons a {
-  color: var(--qy-muted);
-  transition: color 0.2s;
+/* ---------- 7. Blog figures ----------
+   Position: fig-left | fig-right | fig-center
+   Size (optional): fig-small | fig-large
+   Example: <figure class="fig-right fig-small"> … </figure>            */
+.fig-left,
+.fig-right,
+.fig-center {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
 }
-.social .contact-icons a:hover {
-  color: var(--qy-accent);
+.fig-left {
+  float: left;
+  width: 45%;
+  margin-right: 1.5rem;
 }
-
-/* ---------- Language switch button ---------- */
-.qy-lang {
-  display: inline-block;
-  font-size: 0.85rem;
-  padding: 0.25rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--qy-line);
-  background: var(--qy-card);
-  color: var(--qy-text) !important;
-  text-decoration: none !important;
+.fig-right {
+  float: right;
+  width: 45%;
+  margin-left: 1.5rem;
 }
-.qy-lang:hover {
-  background: var(--qy-accent);
-  color: #fff !important;
-}
-
-/* ---------- Footer ---------- */
-footer.fixed-bottom,
-footer.sticky-bottom {
-  font-size: 0.8rem;
-}
-
-/* ---------- Phones ---------- */
-@media (max-width: 576px) {
-  .post:has(.profile) > .post-header {
-    padding: 2rem 1.3rem 1.6rem;
-    border-radius: 16px;
-    background-image:
-      linear-gradient(180deg, rgba(11, 10, 9, 0.55) 0%, rgba(11, 10, 9, 0.92) 70%),
-      url("../img/hero_oocyte.jpg");
-    background-position: 70% center;
-  }
-  .post:has(.profile) > .post-header .post-title,
-  .post:has(.profile) > .post-header .desc {
-    max-width: 100%;
-  }
-  .profile {
-    width: 70% !important;
-    max-width: 280px;
-    float: none !important;
-    margin: 0 auto 1.2rem !important;
-  }
-}
-
-/* fixes */
-.publications ol.bibliography li .abbr abbr,
-.publications ol.bibliography li .abbr abbr a {
-  background-color: var(--qy-soft) !important;
-  color: var(--qy-accent) !important;
-}
-.post:has(.profile) > .post-header .post-title,
-.post:has(.profile) > .post-header .post-title * {
-  color: #fff !important;
-}
-.projects .card-img-top,
-.projects img {
-  filter: none;
-}
-
-/* ---------- Techniques strip ---------- */
-.qy-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin: 0.4rem 0 0.6rem;
-}
-.qy-tech span {
-  background: var(--qy-card);
-  border: 1px solid var(--qy-line);
-  border-radius: 999px;
-  padding: 0.35rem 0.95rem;
-  font-size: 0.9rem;
-  color: var(--qy-text);
-}
-
-/* ---------- Beyond the lab ---------- */
-.qy-beyond {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 1.5rem;
-  align-items: center;
-  background: var(--qy-card);
-  border: 1px solid var(--qy-line);
-  border-radius: 20px;
-  padding: 1.4rem;
-}
-.qy-beyond-text p {
-  margin-top: 0;
-}
-.qy-beyond-photo {
-  margin: 0;
-}
-.qy-beyond-photo img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 12px 28px -16px rgba(60, 30, 20, 0.55);
-}
-.qy-beyond-photo figcaption {
-  font-size: 0.82rem;
-  color: var(--qy-muted);
+.fig-center {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  margin-top: 0.45rem;
 }
-@media (max-width: 576px) {
-  .qy-beyond {
-    grid-template-columns: 1fr;
-  }
+.fig-small.fig-left,
+.fig-small.fig-right {
+  width: 33%;
 }
-
-/* let About-page text flow beside the photo (both languages) */
-.post article > .clearfix {
-  display: block !important;
+.fig-large.fig-left,
+.fig-large.fig-right {
+  width: 60%;
 }
-.post article > .clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+.fig-small.fig-center {
+  width: 45%;
 }
-.post:has(.profile) > .post-header .desc strong {
-  color: #fff !important;
+.fig-large.fig-center {
+  width: 100%;
 }
-.qy-beyond {
-  grid-template-columns: 1.6fr 1fr;
-  align-items: start;
+.fig-left img,
+.fig-right img,
+.fig-center img {
+  width: 100%;
+  border-radius: 8px;
 }
-.qy-beyond-photo img {
-  aspect-ratio: 3 / 4;
-  max-height: 360px;
-}
-.post article > .clearfix.table-responsive {
-  overflow: visible !important;
-}
-@media (max-width: 576px) {
-  .qy-beyond {
-    grid-template-columns: 1fr;
-  }
-  .qy-beyond-photo img {
-    max-height: 320px;
-  }
+.fig-left figcaption,
+.fig-right figcaption,
+.fig-center figcaption {
+  font-size: 0.85em;
+  color: #6f665d;
+  margin-top: 0.4rem;
+  text-align: left;
 }
 
-/* ---------- Small muted line (hobbies, notes) ---------- */
-.qy-aside {
-  font-size: 0.9rem;
-  color: var(--qy-muted);
-  margin-top: 0.8rem;
-}
-/* calmer, more compact header band */
-.post:has(.profile) > .post-header {
-  min-height: 0;
-  padding: 2.1rem 2.2rem 1.9rem;
-}
-
-/* ---------- Life page photo grid ---------- */
+/* ---------- 8. Life page ---------- */
 .qy-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -583,101 +474,113 @@ footer.sticky-bottom {
   margin-top: 0.4rem;
 }
 
-/* blog titles: keep the capitalization I type */
-.post:not(:has(.profile)) > .post-header .post-title {
-  text-transform: none;
+/* ---------- 9. Protocols ---------- */
+/* the list on the Protocols page */
+.qy-protocols {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
 }
-/* headings start below the photo */
-.post article h2 {
-  clear: both;
+.qy-protocols li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.7rem;
+  background: var(--qy-card);
+  border: 1px solid var(--qy-line);
+  border-radius: 12px;
+}
+.qy-protocol-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.qy-protocol-desc {
+  font-size: 0.88rem;
+  color: var(--qy-muted);
+  margin-top: 0.2rem;
+}
+.qy-protocol-pdf {
+  font-size: 1.7rem;
+  color: #c0392b !important;
+  flex-shrink: 0;
+}
+.qy-protocol-pdf:hover {
+  opacity: 0.75;
+}
+/* tables and download button inside a protocol page */
+.qy-proto table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.6rem 0 1.4rem;
+  font-size: 0.95rem;
+}
+.qy-proto th {
+  background: #f2e8df;
+  text-align: left;
+  font-weight: 600;
+}
+.qy-proto th,
+.qy-proto td {
+  border: 1px solid var(--qy-line);
+  padding: 0.45rem 0.7rem;
+  vertical-align: top;
+}
+.qy-proto tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.015);
+}
+.qy-proto-download a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--qy-line);
+  border-radius: 999px;
+  font-weight: 600;
+}
+.qy-proto-download i {
+  color: #c0392b;
+  margin-right: 0.3rem;
 }
 
-
-/* About pages: News and Selected Publications in scroll boxes */
-.post:has(.profile) .news .table-responsive {
-  max-height: 21rem;          /* about 5 news items */
-  overflow-y: auto;
-  padding-right: 0.5rem;
+/* ---------- 10. Footer ---------- */
+footer.fixed-bottom,
+footer.sticky-bottom {
+  font-size: 0.8rem;
 }
-.post:has(.profile) .publications {
-  max-height: 34rem;          /* about 3 papers */
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
-/* always show a thin scroll bar, so visitors know there is more */
-.post:has(.profile) .news .table-responsive::-webkit-scrollbar,
-.post:has(.profile) .publications::-webkit-scrollbar {
-  width: 6px;
-}
-.post:has(.profile) .news .table-responsive::-webkit-scrollbar-thumb,
-.post:has(.profile) .publications::-webkit-scrollbar-thumb {
-  background: rgba(120, 90, 70, 0.35);
-  border-radius: 3px;
-}
-
-/* visitor counter in the footer: same light color as the footer text */
 footer,
 footer .container,
 footer #busuanzi_site_uv {
-  color: #d9cfc4 !important;
+  color: #d9cfc4 !important; /* incl. the visitor counter */
 }
 
-/* ===== Figures in blog posts =====
-   Position: fig-left | fig-right | fig-center
-   Size (optional): fig-small | fig-large            */
-.fig-left, .fig-right, .fig-center { margin-top: 0.3rem; margin-bottom: 1rem; }
-.fig-left   { float: left;  width: 45%; margin-right: 1.5rem; }
-.fig-right  { float: right; width: 45%; margin-left: 1.5rem; }
-.fig-center { width: 70%; margin-left: auto; margin-right: auto; text-align: center; }
-
-.fig-small.fig-left,  .fig-small.fig-right  { width: 33%; }
-.fig-large.fig-left,  .fig-large.fig-right  { width: 60%; }
-.fig-small.fig-center { width: 45%; }
-.fig-large.fig-center { width: 100%; }
-
-.fig-left img, .fig-right img, .fig-center img { width: 100%; border-radius: 8px; }
-.fig-left figcaption, .fig-right figcaption, .fig-center figcaption {
-  font-size: 0.85em; color: #6f665d; margin-top: 0.4rem; text-align: left;
+/* ---------- 11. Phones ---------- */
+@media (max-width: 576px) {
+  .post:has(.profile) > .post-header {
+    border-radius: 16px;
+    background-image:
+      linear-gradient(180deg, rgba(11, 10, 9, 0.55) 0%, rgba(11, 10, 9, 0.92) 70%),
+      url("../img/hero_oocyte.jpg");
+    background-position: 70% center;
+  }
+  .post:has(.profile) > .post-header .post-title,
+  .post:has(.profile) > .post-header .desc {
+    max-width: 100%;
+  }
+  .profile {
+    width: 70% !important;
+    max-width: 280px;
+    float: none !important;
+    margin: 0 auto 1.2rem !important;
+  }
 }
-/* phones: every figure full width, no wrapping */
 @media (max-width: 700px) {
-  .fig-left, .fig-right, .fig-center { float: none; width: 100% !important; margin: 1rem 0; }
-}
-
-/* ---------- Protocols list ---------- */
-.qy-protocols { list-style: none; padding: 0; margin: 1rem 0; }
-.qy-protocols li {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding: 0.9rem 1.1rem; margin-bottom: 0.7rem;
-  background: var(--qy-card); border: 1px solid var(--qy-line); border-radius: 12px;
-}
-.qy-protocol-title { font-weight: 600; font-size: 1.05rem; }
-.qy-protocol-desc { font-size: 0.88rem; color: var(--qy-muted); margin-top: 0.2rem; }
-.qy-protocol-pdf { font-size: 1.7rem; color: #c0392b !important; flex-shrink: 0; }
-.qy-protocol-pdf:hover { opacity: 0.75; }
-
-/* ---------- Protocol pages ---------- */
-.qy-proto table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; font-size: 0.95rem; }
-.qy-proto th { background: #f2e8df; text-align: left; font-weight: 600; }
-.qy-proto th, .qy-proto td { border: 1px solid var(--qy-line); padding: 0.45rem 0.7rem; vertical-align: top; }
-.qy-proto tr:nth-child(even) td { background: rgba(0, 0, 0, 0.015); }
-.qy-proto-download a { display: inline-block; margin-top: 0.8rem; padding: 0.45rem 1rem; border: 1px solid var(--qy-line); border-radius: 999px; font-weight: 600; }
-.qy-proto-download i { color: #c0392b; margin-right: 0.3rem; }
-
-/* section headings: grey line full width + orange line under the text */
-.post h2:not(.bibliography), article h2:not(.bibliography) {
-  display: grid;
-  grid-template-columns: fit-content(100%);
-  border-bottom: 1px solid var(--qy-line);
-  padding-bottom: 0;
-  position: static;
-}
-.post h2:not(.bibliography)::after, article h2:not(.bibliography)::after {
-  position: static;
-  grid-column: 1;
-  width: auto;
-  height: 2px;
-  margin-top: 0.35rem;
-  margin-bottom: -1px;
-  background: var(--qy-accent);
+  /* blog figures: full width, no wrapping */
+  .fig-left,
+  .fig-right,
+  .fig-center {
+    float: none;
+    width: 100% !important;
+    margin: 1rem 0;
+  }
 }

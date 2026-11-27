@@ -5,7 +5,6 @@ description: Long-term goal
 importance: 3
 category: research
 ---
-
 <figure class="fig-center fig-large">
   <img src="/assets/img/2026/3_mouse_human_ovary.jpg" alt="Mouse and human ovaries at birth, showing follicles at different stages">
   <figcaption>Mouse and human ovaries at birth. Schematic drawn with Claude (AI).</figcaption>

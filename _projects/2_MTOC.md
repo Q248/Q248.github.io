@@ -5,7 +5,6 @@ description: Number, composition and formation of microtubule-organizing centers
 importance: 2
 category: research
 ---
-
 <figure class="fig-center fig-large">
   <img src="/assets/img/2026/2_MTOC_development.jpg" alt="The dynamics of MTOCs during oocyte development">
   <figcaption>MTOCs during mouse oocyte development. Schematic drawn with Claude (AI)</figcaption>
@@ -24,7 +23,6 @@ The de novo formation of MTOCs during meiotic maturation (<a href="#ref5">5</a>)
 In mouse embryos, centrioles form de novo at the blastocyst stage (<a id="cite12" href="#ref12">12</a>), whereas in human embryos, centrioles are contributed by the sperm (<a id="cite13" href="#ref13">13</a>, <a id="cite14" href="#ref14">14</a>). Why do the two species differ?
 
 Many more questions remain to be answered.
-
 
 <div style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.12); font-size: 0.85em; color: #6f665d;">
 <p style="font-size: 1.18em; color: #2e2a26;"><strong>References</strong></p>

@@ -39,10 +39,6 @@ So many interesting questions remain unanswered.
 </ol>
 </div>
 
-
 <p style="margin-top: 2rem; font-size: 0.8em; color: #6f665d;"><em>AI tools were used to improve the grammar and flow of this post. The author takes full responsibility for its content.</em></p>
-
-</ol>
-</div>
 
 

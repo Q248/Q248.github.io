@@ -1,5 +1,4 @@
 ---
----
 layout: page
 title: Whole-Mount Immunostaining and Clearing of Mouse Ovaries
 permalink: /protocols/whole-ovary-staining/

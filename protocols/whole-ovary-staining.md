@@ -2,7 +2,7 @@
 ---
 layout: page
 title: Whole-Mount Immunostaining and Clearing of Mouse Ovaries
-permalink: /protocols/ovary-staining/
+permalink: /protocols/whole-ovary-staining/
 description: Adapted from the Ce3D clearing method (Li et al., 2019).
 ---
 
@@ -58,6 +58,6 @@ description: Adapted from the Ce3D clearing method (Li et al., 2019).
 
 Li W, Germain RN, Gerner MY. High-dimensional cell-level analysis of tissues with Ce3D multiplex volume imaging. *Nat Protoc*. 2019 Jun;14(6):1708–1733. doi: 10.1038/s41596-019-0156-4. PMID: 31028373; PMCID: PMC8690297.
 
-<p class="qy-proto-download"><a href="/assets/pdf/protocols/ovary-staining.pdf" download><i class="fa-solid fa-file-pdf"></i> Download PDF</a></p>
+<p class="qy-proto-download"><a href="/assets/pdf/protocols/whole-ovary-staining.pdf" download><i class="fa-solid fa-file-pdf"></i> Download PDF</a></p>
 
 </div>

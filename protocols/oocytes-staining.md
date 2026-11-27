@@ -56,6 +56,6 @@ description: Adapted from So et al., 2019.
 
 So C, Seres KB, Steyer AM, Mönnich E, Clift D, Pejkovska A, Möbius W, Schuh M. A liquid-like spindle domain promotes acentrosomal spindle assembly in mammalian oocytes. *Science*. 2019 Jun 28;364(6447):eaat9557. doi: 10.1126/science.aat9557. PMID: 31249032; PMCID: PMC6629549.
 
-<p class="qy-proto-download"><a href="/assets/pdf/protocols/oocyte-staining.pdf" download><i class="fa-solid fa-file-pdf"></i> Download PDF</a></p>
+<p class="qy-proto-download"><a href="/assets/pdf/protocols/oocytes-staining.pdf" download><i class="fa-solid fa-file-pdf"></i> Download PDF</a></p>
 
 </div>

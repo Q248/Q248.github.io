@@ -6,7 +6,7 @@ importance: 2
 category: research
 ---
 
-<figure class="fig-right fig-small">
+<figure class="fig-center fig-large">
   <img src="/assets/img/2026/2_MTOC_development.jpg" alt="The dynamics of MTOCs during oocyte development">
   <figcaption>MTOCs during mouse oocyte development. Schematic drawn with Claude (AI)</figcaption>
 </figure>

@@ -584,3 +584,6 @@ footer #busuanzi_site_uv {
     margin: 1rem 0;
   }
 }
+/* Reference links */
+li[id^="ref"] { scroll-margin-top: 80px; }
+li[id^="ref"]:target { background: rgba(201, 150, 46, .18); border-radius: 4px; }

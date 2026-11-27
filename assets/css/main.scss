@@ -589,7 +589,26 @@ footer #busuanzi_site_uv {
 [id^="ref"] {
   scroll-margin-top: 90px;
 }
+/* citation numbers in the text: bold, accent colour */
+a[href^="#ref"] {
+  font-weight: 700;
+  text-decoration: none;
+}
+a[href^="#ref"]:hover {
+  text-decoration: underline;
+}
+/* highlight the reference you jumped to */
 li[id^="ref"]:target {
-  background: rgba(201, 150, 46, .18);
+  background: #ffe066;
+  color: #2e2a26;
+  border-left: 4px solid #e0a800;
   border-radius: 4px;
+  padding: 2px 6px;
+}
+/* highlight the citation you came back to */
+a[id^="cite"]:target {
+  background: #ffe066;
+  color: #2e2a26;
+  border-radius: 3px;
+  padding: 0 3px;
 }

@@ -666,24 +666,18 @@ footer #busuanzi_site_uv {
 
 /* section headings: grey line full width + orange line under the text */
 .post h2:not(.bibliography), article h2:not(.bibliography) {
-  display: table;
-  border-bottom: none;
-  padding-bottom: 0.35rem;
-  position: relative;
+  display: grid;
+  grid-template-columns: fit-content(100%);
+  border-bottom: 1px solid var(--qy-line);
+  padding-bottom: 0;
+  position: static;
 }
 .post h2:not(.bibliography)::after, article h2:not(.bibliography)::after {
-  width: 100%;
-  bottom: 0;
+  position: static;
+  grid-column: 1;
+  width: auto;
   height: 2px;
-  z-index: 1;
+  margin-top: 0.35rem;
+  margin-bottom: -1px;
+  background: var(--qy-accent);
 }
-.post h2:not(.bibliography)::before, article h2:not(.bibliography)::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 200vw;
-  height: 1px;
-  background: var(--qy-line);
-}
-article { overflow-x: clip; }

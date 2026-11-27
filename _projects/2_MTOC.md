@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Microtubule-organizing centers (MTOCs) in oocytes
-description: Number, composition and formation of microtubule-organizing centers during oocyte growth
+description: Number, composition and formation of MTOCs during oocyte growth
 importance: 2
 category: research
 ---

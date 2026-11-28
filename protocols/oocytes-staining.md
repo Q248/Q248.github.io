@@ -19,7 +19,7 @@ description: Adapted from So et al., 2019.
 | MgSO₄ | MilliporeSigma | MX0075-1 |
 | Paraformaldehyde (PFA) | Ted Pella | 18505 |
 | Triton X-100 | MilliporeSigma | X100-500ML |
-| PBS | Thermo Fisher | 10010-023 |
+| Phosphate-buffered saline (PBS) | Thermo Fisher | 10010-023 |
 | Bovine serum albumin (BSA) | MilliporeSigma | A9647-50G |
 | Normal donkey serum (NDS) | Jackson ImmunoResearch | 017-000-121 |
 | DAPI | MilliporeSigma | D9542-10MG |

@@ -11,7 +11,7 @@ description: Adapted from the Ce3D clearing method (Li et al., 2019).
 
 | Item | Supplier | Catalog no. |
 | --- | --- | --- |
-| PBS | Thermo Fisher | 10010-023 |
+| Phosphate-buffered saline (PBS) | Thermo Fisher | 10010-023 |
 | Paraformaldehyde (PFA) | Ted Pella | 18505 |
 | Triton X-100 | MilliporeSigma | X100-500ML |
 | 1-Thioglycerol | MilliporeSigma | M1753 |

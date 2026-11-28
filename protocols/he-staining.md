@@ -37,7 +37,7 @@ description: Adapted from Rodig, 2021.
 8. Stain with eosin and dehydrate: eosin, 30 s; 95% ethanol, 2 × 5 min; 100% ethanol, 2 × 5 min; xylene, 2 × 15 min.
 9. Mount with Micromount, apply a coverslip, and let the slides dry before imaging.
 
-## Notes
+## Note
 
 - Perform all steps involving formalin or xylene in a fume hood.
 

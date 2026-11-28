@@ -48,7 +48,7 @@ description: Adapted from So et al., 2019.
 10. Wash three times in washing buffer, 5 min each, at room temperature; add DAPI (1 µg/mL) during the second wash.
 11. Mount on a slide in SlowFade mountant and image.
 
-## Notes
+## Note
 
 - Before fixation, oocytes can be kept in M16 medium containing 2.5 µM milrinone at 37 °C (5% CO₂).
 

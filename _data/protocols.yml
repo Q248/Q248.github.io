@@ -7,3 +7,8 @@
   description: Immunostaining of mouse oocytes (preserving microtubules)
   page: /protocols/oocytes-staining/
   pdf: /assets/pdf/protocols/oocytes-staining.pdf
+
+- title: Hematoxylin and Eosin (H&E) Staining
+  description: H&E staining of paraffin sections
+  page: /protocols/he-staining/
+  pdf: /assets/pdf/protocols/he-staining.pdf

@@ -25,9 +25,9 @@ description: Adapted from So et al., 2019.
 | DAPI | MilliporeSigma | D9542-10MG |
 | SlowFade Glass Soft-Set Antifade Mountant | Thermo Fisher | S36917 |
 
-## Buffers
+## Solutions
 
-| Buffer | Composition |
+| Solution | Composition |
 | --- | --- |
 | Fixative | 100 mM HEPES (pH 7.0, titrated with KOH), 50 mM EGTA (pH 7.0, titrated with KOH), 10 mM MgSO₄, 2% PFA (methanol-free) and 0.5% Triton X-100 |
 | Washing buffer | 0.3% Triton X-100 in PBS |

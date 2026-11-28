@@ -22,9 +22,9 @@ description: Adapted from the Ce3D clearing method (Li et al., 2019).
 | DAPI | MilliporeSigma | D9542-10MG |
 | Glass-bottom dish | MatTek | P35G-0-14-C |
 
-## Buffers
+## Solutions
 
-| Buffer | Composition |
+| Solution | Composition |
 | --- | --- |
 | Fixative | 4% PFA in PBS |
 | Washing buffer | 0.3% Triton X-100 and 0.5% 1-thioglycerol in PBS |

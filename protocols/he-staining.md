@@ -19,9 +19,9 @@ description: Adapted from Rodig, 2021.
 | Micromount mounting medium | Leica | 3801731 |
 | Hydrochloric acid (HCl), concentrated | MilliporeSigma | HX0603-75 |
 
-## Buffers
+## Solution
 
-| Buffer | Composition |
+| Solution | Composition |
 | --- | --- |
 | Acid ethanol | 1 mL concentrated HCl in 400 mL of 70% ethanol (about 0.25% HCl) |
 
